@@ -16,8 +16,8 @@ namespace PaintCodeNet
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            var service = FirstFloor.XamlSpy.Services.XamlSpyService.Current;
-            service.Connect("10.1.0.208",4530,"68169");
+            //var service = FirstFloor.XamlSpy.Services.XamlSpyService.Current;
+            //service.Connect("10.1.0.208",4530,"68169");
             SfSkinManager.ApplyStylesOnApplication = true;
             base.OnStartup(e);
         }

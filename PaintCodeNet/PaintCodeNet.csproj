@@ -1,256 +1,414 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
   <PropertyGroup>
-    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
-    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3A7C6A53-4047-4842-9FD3-86AA1921DC1F}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>PaintCodeNet</RootNamespace>
-    <AssemblyName>PaintCodeNet</AssemblyName>
-    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
-    <FileAlignment>512</FileAlignment>
-    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
-    <WarningLevel>4</WarningLevel>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
-    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\</SolutionDir>
-    <RestorePackages>true</RestorePackages>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugSymbols>true</DebugSymbols>
-    <DebugType>full</DebugType>
-    <Optimize>false</Optimize>
-    <OutputPath>bin\Debug\</OutputPath>
-    <DefineConstants>DEBUG;TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
-  </PropertyGroup>
-  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
-    <DebugType>pdbonly</DebugType>
-    <Optimize>true</Optimize>
-    <OutputPath>bin\Release\</OutputPath>
-    <DefineConstants>TRACE</DefineConstants>
-    <ErrorReport>prompt</ErrorReport>
-    <WarningLevel>4</WarningLevel>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <UseWPF>true</UseWPF>
+    <GenerateAssemblyInfo>false</GenerateAssemblyInfo>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="HelixToolkit, Version=2015.1.715.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
-      <HintPath>..\packages\HelixToolkit.2015.1.715\lib\portable-net4+sl4+wp71+win8\HelixToolkit.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="HelixToolkit.Wpf, Version=2015.1.715.0, Culture=neutral, PublicKeyToken=52aa3500039caf0d, processorArchitecture=MSIL">
-      <HintPath>..\packages\HelixToolkit.Wpf.2015.1.715\lib\net45\HelixToolkit.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Edit.Wpf, Version=14.1451.0.46, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Edit.WPF451.14.1.0.46\lib\net451\Syncfusion.Edit.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.SfChromelessWindow.Wpf, Version=14.1451.0.46, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.SfChromelessWindow.WPF451.14.1.0.46\lib\net451\Syncfusion.SfChromelessWindow.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.SfSkinManager.WPF, Version=14.1451.0.46, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.SfSkinManager.WPF451.14.1.0.46\lib\net451\Syncfusion.SfSkinManager.WPF.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Shared.Wpf, Version=14.1451.0.46, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Shared.WPF451.14.1.0.46\lib\net451\Syncfusion.Shared.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Themes.Metro.WPF, Version=14.1451.0.46, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Themes.Metro.WPF451.14.1.0.46\lib\net451\Syncfusion.Themes.Metro.WPF.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Syncfusion.Tools.Wpf, Version=14.1451.0.46, Culture=neutral, PublicKeyToken=3d67ed1f87d44c89, processorArchitecture=MSIL">
-      <HintPath>..\packages\Syncfusion.Tools.WPF451.14.1.0.46\lib\net451\Syncfusion.Tools.Wpf.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="System" />
-    <Reference Include="System.Data" />
-    <Reference Include="System.Xml" />
-    <Reference Include="Microsoft.CSharp" />
-    <Reference Include="System.Core" />
-    <Reference Include="System.Xml.Linq" />
-    <Reference Include="System.Data.DataSetExtensions" />
-    <Reference Include="System.Xaml">
-      <RequiredTargetFramework>4.0</RequiredTargetFramework>
-    </Reference>
-    <Reference Include="WindowsBase" />
-    <Reference Include="PresentationCore" />
-    <Reference Include="PresentationFramework" />
-    <Reference Include="XamlSpy, Version=3.0.0.0, Culture=neutral, PublicKeyToken=bc9b0c37bf06c6a9, processorArchitecture=MSIL">
-      <HintPath>..\packages\XamlSpyLibs.3.0.3\lib\net4\XamlSpy.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
+    <None Remove="Icons\clipboard_copy.ico" />
+    <None Remove="Icons\clipboard_cut.ico" />
+    <None Remove="Icons\clipboard_paste.ico" />
+    <None Remove="Icons\close_window.ico" />
+    <None Remove="Icons\delete.ico" />
+    <None Remove="Icons\help.ico" />
+    <None Remove="Icons\home.ico" />
+    <None Remove="Icons\redo.ico" />
+    <None Remove="Icons\save.ico" />
+    <None Remove="Icons\save_all.ico" />
+    <None Remove="Icons\save_as.ico" />
+    <None Remove="Icons\undo.ico" />
+    <None Remove="Images\align_bottom.PNG" />
+    <None Remove="Images\align_bottom_alt.PNG" />
+    <None Remove="Images\align_horizontally.PNG" />
+    <None Remove="Images\align_horizontally_alt.PNG" />
+    <None Remove="Images\align_left.PNG" />
+    <None Remove="Images\align_left_alt.PNG" />
+    <None Remove="Images\align_right.PNG" />
+    <None Remove="Images\align_right_alt.PNG" />
+    <None Remove="Images\align_top.PNG" />
+    <None Remove="Images\align_top_alt.PNG" />
+    <None Remove="Images\align_vertically.PNG" />
+    <None Remove="Images\align_vertically_alt.PNG" />
+    <None Remove="Images\arrow-end-closed.PNG" />
+    <None Remove="Images\arrow-end-line.PNG" />
+    <None Remove="Images\arrow-end-open.PNG" />
+    <None Remove="Images\arrow-start-closed.PNG" />
+    <None Remove="Images\arrow-start-line.PNG" />
+    <None Remove="Images\arrow-start-open.PNG" />
+    <None Remove="Images\arrowshape24.PNG" />
+    <None Remove="Images\arrowshape32.PNG" />
+    <None Remove="Images\artboard-shadow-selected.PNG" />
+    <None Remove="Images\artboard-shadow.PNG" />
+    <None Remove="Images\artboard24.PNG" />
+    <None Remove="Images\artboard32.PNG" />
+    <None Remove="Images\back.png" />
+    <None Remove="Images\bitmap_crop.PNG" />
+    <None Remove="Images\bitmap_crop_hover.PNG" />
+    <None Remove="Images\bitmap_fill.PNG" />
+    <None Remove="Images\bitmap_fill_hover.PNG" />
+    <None Remove="Images\bitmap_invert.PNG" />
+    <None Remove="Images\bitmap_invert_hover.PNG" />
+    <None Remove="Images\bitmap_selection.PNG" />
+    <None Remove="Images\bitmap_vectorize.PNG" />
+    <None Remove="Images\bitmap_vectorize_hover.PNG" />
+    <None Remove="Images\bitmap_wand.PNG" />
+    <None Remove="Images\colormenu24.PNG" />
+    <None Remove="Images\colormenu32.PNG" />
+    <None Remove="Images\combine24.PNG" />
+    <None Remove="Images\combine32.PNG" />
+    <None Remove="Images\contract.png" />
+    <None Remove="Images\create-grid24.PNG" />
+    <None Remove="Images\create-grid32.PNG" />
+    <None Remove="Images\create-symbol24.PNG" />
+    <None Remove="Images\create-symbol32.PNG" />
+    <None Remove="Images\cursor-insert.PNG" />
+    <None Remove="Images\cursor-select.PNG" />
+    <None Remove="Images\cursor_crosshair.PNG" />
+    <None Remove="Images\cursor_crosshair_add.PNG" />
+    <None Remove="Images\cursor_crosshair_remove.PNG" />
+    <None Remove="Images\cursor_magic_wand.PNG" />
+    <None Remove="Images\cursor_magic_wand_add.PNG" />
+    <None Remove="Images\cursor_magic_wand_remove.PNG" />
+    <None Remove="Images\cursor_slice.PNG" />
+    <None Remove="Images\decoration_none.png" />
+    <None Remove="Images\decoration_strikethrough.png" />
+    <None Remove="Images\decoration_underline.png" />
+    <None Remove="Images\decoration_underline2.png" />
+    <None Remove="Images\difference24.PNG" />
+    <None Remove="Images\difference32.PNG" />
+    <None Remove="Images\distribute_horizontally.PNG" />
+    <None Remove="Images\distribute_vertically.PNG" />
+    <None Remove="Images\edit24.PNG" />
+    <None Remove="Images\edit32.PNG" />
+    <None Remove="Images\editbitmap24.PNG" />
+    <None Remove="Images\editbitmap32.PNG" />
+    <None Remove="Images\empty.PNG" />
+    <None Remove="Images\expand.png" />
+    <None Remove="Images\export24.PNG" />
+    <None Remove="Images\export32.PNG" />
+    <None Remove="Images\export_remove.PNG" />
+    <None Remove="Images\export_remove_pressed.PNG" />
+    <None Remove="Images\eye-alt-select-symbol.PNG" />
+    <None Remove="Images\eyeBlue.PNG" />
+    <None Remove="Images\eyeDarkGrey.PNG" />
+    <None Remove="Images\eyeLightGrey.PNG" />
+    <None Remove="Images\eyeWhite.PNG" />
+    <None Remove="Images\filter_layer.PNG" />
+    <None Remove="Images\filter_layer_select.PNG" />
+    <None Remove="Images\filter_slice.PNG" />
+    <None Remove="Images\filter_slice_select.PNG" />
+    <None Remove="Images\flatten24.PNG" />
+    <None Remove="Images\flatten32.PNG" />
+    <None Remove="Images\flip_horizontally.png" />
+    <None Remove="Images\flip_vertically.png" />
+    <None Remove="Images\folder_blue.PNG" />
+    <None Remove="Images\folder_purple.PNG" />
+    <None Remove="Images\fontmenu24.PNG" />
+    <None Remove="Images\fontmenu32.PNG" />
+    <None Remove="Images\frame.png" />
+    <None Remove="Images\front.PNG" />
+    <None Remove="Images\grid-boxed.PNG" />
+    <None Remove="Images\grid-layout24.PNG" />
+    <None Remove="Images\grid-layout32.PNG" />
+    <None Remove="Images\grid-square24.PNG" />
+    <None Remove="Images\grid-square32.PNG" />
+    <None Remove="Images\grid-unboxed.PNG" />
+    <None Remove="Images\group24.PNG" />
+    <None Remove="Images\group32.PNG" />
+    <None Remove="Images\insert-symbol24.PNG" />
+    <None Remove="Images\insert-symbol32.PNG" />
+    <None Remove="Images\insert-textstyle24.PNG" />
+    <None Remove="Images\insert-textstyle32.PNG" />
+    <None Remove="Images\insertimage24.PNG" />
+    <None Remove="Images\insertimage32.PNG" />
+    <None Remove="Images\insertmenu24.PNG" />
+    <None Remove="Images\insertmenu32.PNG" />
+    <None Remove="Images\insertslice24.PNG" />
+    <None Remove="Images\insertslice32.PNG" />
+    <None Remove="Images\inserttextlayer24.PNG" />
+    <None Remove="Images\inserttextlayer32.PNG" />
+    <None Remove="Images\insertvector24.PNG" />
+    <None Remove="Images\insertvector32.PNG" />
+    <None Remove="Images\inspector_add.PNG" />
+    <None Remove="Images\inspector_add_hover.PNG" />
+    <None Remove="Images\inspector_add_pressed.PNG" />
+    <None Remove="Images\inspector_colorwell.PNG" />
+    <None Remove="Images\inspector_colorwell_pressed.PNG" />
+    <None Remove="Images\inspector_color_hover.PNG" />
+    <None Remove="Images\inspector_color_pressed.PNG" />
+    <None Remove="Images\inspector_flip_horizontal.PNG" />
+    <None Remove="Images\inspector_flip_horizontal_pressed.PNG" />
+    <None Remove="Images\inspector_flip_vertical.PNG" />
+    <None Remove="Images\inspector_flip_vertical_pressed.PNG" />
+    <None Remove="Images\inspector_frequent.PNG" />
+    <None Remove="Images\inspector_mode_angular.PNG" />
+    <None Remove="Images\inspector_mode_angular_hover.PNG" />
+    <None Remove="Images\inspector_mode_angular_select.PNG" />
+    <None Remove="Images\inspector_mode_color.PNG" />
+    <None Remove="Images\inspector_mode_color_hover.PNG" />
+    <None Remove="Images\inspector_mode_color_select.PNG" />
+    <None Remove="Images\inspector_mode_linear.PNG" />
+    <None Remove="Images\inspector_mode_linear_hover.PNG" />
+    <None Remove="Images\inspector_mode_linear_select.PNG" />
+    <None Remove="Images\inspector_mode_noise.PNG" />
+    <None Remove="Images\inspector_mode_noise_hover.PNG" />
+    <None Remove="Images\inspector_mode_noise_select.PNG" />
+    <None Remove="Images\inspector_mode_pattern.PNG" />
+    <None Remove="Images\inspector_mode_pattern_hover.PNG" />
+    <None Remove="Images\inspector_mode_pattern_select.PNG" />
+    <None Remove="Images\inspector_mode_radial.PNG" />
+    <None Remove="Images\inspector_mode_radial_hover.PNG" />
+    <None Remove="Images\inspector_mode_radial_select.PNG" />
+    <None Remove="Images\inspector_mode_separator.PNG" />
+    <None Remove="Images\inspector_options.PNG" />
+    <None Remove="Images\inspector_options_hover.PNG" />
+    <None Remove="Images\inspector_picker.PNG" />
+    <None Remove="Images\inspector_picker_bg.PNG" />
+    <None Remove="Images\inspector_picker_bg_pressed.PNG" />
+    <None Remove="Images\inspector_reset.PNG" />
+    <None Remove="Images\inspector_reset_hover%402x.png" />
+    <None Remove="Images\inspector_reset_pressed.PNG" />
+    <None Remove="Images\inspector_rotate.PNG" />
+    <None Remove="Images\inspector_rotate_anti.PNG" />
+    <None Remove="Images\inspector_rotate_anti_hover.PNG" />
+    <None Remove="Images\inspector_rotate_hover.PNG" />
+    <None Remove="Images\inspector_slice.PNG" />
+    <None Remove="Images\inspector_slice_hover.PNG" />
+    <None Remove="Images\inspector_slice_pressed.PNG" />
+    <None Remove="Images\inspector_text.PNG" />
+    <None Remove="Images\inspector_trash.PNG" />
+    <None Remove="Images\inspector_trash_hover.PNG" />
+    <None Remove="Images\inspector_trash_pressed.PNG" />
+    <None Remove="Images\intersect24.PNG" />
+    <None Remove="Images\intersect32.PNG" />
+    <None Remove="Images\iosconnect-connected-notif24.PNG" />
+    <None Remove="Images\iosconnect-connected-notif32.PNG" />
+    <None Remove="Images\iosconnect-connected24.PNG" />
+    <None Remove="Images\iosconnect-connected32.PNG" />
+    <None Remove="Images\iosconnect-disconnected-notif24.PNG" />
+    <None Remove="Images\iosconnect-disconnected-notif32.PNG" />
+    <None Remove="Images\iosconnect-disconnected24.PNG" />
+    <None Remove="Images\iosconnect-disconnected32.PNG" />
+    <None Remove="Images\iosconnect-ipad24.PNG" />
+    <None Remove="Images\iosconnect-ipad32.PNG" />
+    <None Remove="Images\iosconnect-iphone24.PNG" />
+    <None Remove="Images\iosconnect-iphone32.PNG" />
+    <None Remove="Images\layerlist-discloser-colapsed-unfocused.PNG" />
+    <None Remove="Images\layerlist-discloser-colapsed.PNG" />
+    <None Remove="Images\layerlist-discloser-unfocused.PNG" />
+    <None Remove="Images\layerlist-discloser.PNG" />
+    <None Remove="Images\layerlist_bitmap.PNG" />
+    <None Remove="Images\layerlist_bitmap_alt.PNG" />
+    <None Remove="Images\layerlist_hide.PNG" />
+    <None Remove="Images\layerlist_hide_alt.PNG" />
+    <None Remove="Images\layerlist_hide_hover.PNG" />
+    <None Remove="Images\layerlist_hide_select_alt.PNG" />
+    <None Remove="Images\layerlist_locked.PNG" />
+    <None Remove="Images\layerlist_locked_alt.PNG" />
+    <None Remove="Images\layerlist_locked_pressed.PNG" />
+    <None Remove="Images\layerlist_mask.PNG" />
+    <None Remove="Images\layerlist_mask_selected.PNG" />
+    <None Remove="Images\layerlist_op_difference.png" />
+    <None Remove="Images\layerlist_op_intersect.png" />
+    <None Remove="Images\layerlist_op_none.png" />
+    <None Remove="Images\layerlist_op_subtract.png" />
+    <None Remove="Images\layerlist_op_union.png" />
+    <None Remove="Images\layerlist_text.PNG" />
+    <None Remove="Images\layerlist_text_alt.PNG" />
+    <None Remove="Images\layerlist_text_style.PNG" />
+    <None Remove="Images\lineshape24.PNG" />
+    <None Remove="Images\lineshape32.PNG" />
+    <None Remove="Images\line_cap_butt.png" />
+    <None Remove="Images\line_cap_round.png" />
+    <None Remove="Images\line_cap_square.png" />
+    <None Remove="Images\line_join_bevel.png" />
+    <None Remove="Images\line_join_miter.png" />
+    <None Remove="Images\line_join_round.png" />
+    <None Remove="Images\lock-closed.PNG" />
+    <None Remove="Images\lock-open.PNG" />
+    <None Remove="Images\lockBlue.PNG" />
+    <None Remove="Images\lockDarkGrey.PNG" />
+    <None Remove="Images\lockLightGrey.PNG" />
+    <None Remove="Images\lockWhite.PNG" />
+    <None Remove="Images\maskwithshape24.PNG" />
+    <None Remove="Images\maskwithshape32.PNG" />
+    <None Remove="Images\menu-inserttextlayer24.PNG" />
+    <None Remove="Images\menu_locked.PNG" />
+    <None Remove="Images\mirror_check.png" />
+    <None Remove="Images\mirror_enter.PNG" />
+    <None Remove="Images\mirror_enter_hover.PNG" />
+    <None Remove="Images\mirror_enter_pressed.PNG" />
+    <None Remove="Images\mirror_share.PNG" />
+    <None Remove="Images\mirror_share_hover.PNG" />
+    <None Remove="Images\mirror_share_pressed.PNG" />
+    <None Remove="Images\mode_select.PNG" />
+    <None Remove="Images\movebackward24.PNG" />
+    <None Remove="Images\movebackward32.PNG" />
+    <None Remove="Images\moveforward24.PNG" />
+    <None Remove="Images\moveforward32.PNG" />
+    <None Remove="Images\noise-1.png" />
+    <None Remove="Images\noise-2.png" />
+    <None Remove="Images\noise-3.png" />
+    <None Remove="Images\noise-4.png" />
+    <None Remove="Images\ovalshape24.PNG" />
+    <None Remove="Images\ovalshape32.PNG" />
+    <None Remove="Images\pages_add.PNG" />
+    <None Remove="Images\pages_add_hover.PNG" />
+    <None Remove="Images\pages_add_pressed.PNG" />
+    <None Remove="Images\pages_hide.PNG" />
+    <None Remove="Images\pages_hide_hover.PNG" />
+    <None Remove="Images\pages_hide_pressed.PNG" />
+    <None Remove="Images\pages_show.PNG" />
+    <None Remove="Images\pages_show_hover.PNG" />
+    <None Remove="Images\pages_show_pressed.PNG" />
+    <None Remove="Images\page_hover.PNG" />
+    <None Remove="Images\penAddCursor.PNG" />
+    <None Remove="Images\pencil24.PNG" />
+    <None Remove="Images\pencil32.PNG" />
+    <None Remove="Images\penCloseCursor.PNG" />
+    <None Remove="Images\penCursor.PNG" />
+    <None Remove="Images\pixeloff24.PNG" />
+    <None Remove="Images\pixeloff32.PNG" />
+    <None Remove="Images\pixelon24.PNG" />
+    <None Remove="Images\pixelon32.PNG" />
+    <None Remove="Images\plugin_cog.png" />
+    <None Remove="Images\point-selection-select.PNG" />
+    <None Remove="Images\point-selection.PNG" />
+    <None Remove="Images\polygonshape24.PNG" />
+    <None Remove="Images\polygonshape32.PNG" />
+    <None Remove="Images\prefs_canvas.PNG" />
+    <None Remove="Images\prefs_general.PNG" />
+    <None Remove="Images\prefs_layers.PNG" />
+    <None Remove="Images\prefs_placeholder%402x.png" />
+    <None Remove="Images\prefs_plugin.PNG" />
+    <None Remove="Images\preset_background.PNG" />
+    <None Remove="Images\rectangleshape24.PNG" />
+    <None Remove="Images\rectangleshape32.PNG" />
+    <None Remove="Images\resizeBottomLeftToTopRightCursor.PNG" />
+    <None Remove="Images\resizeHorCursor.PNG" />
+    <None Remove="Images\resizeTopLeftToBottomRightCursor.PNG" />
+    <None Remove="Images\resizeVerCursor.PNG" />
+    <None Remove="Images\rotate24.PNG" />
+    <None Remove="Images\rotate32.PNG" />
+    <None Remove="Images\rotateBottomCursor.PNG" />
+    <None Remove="Images\rotateBottomLeftCursor.PNG" />
+    <None Remove="Images\rotateBottomRightCursor.PNG" />
+    <None Remove="Images\rotateLeftCursor.PNG" />
+    <None Remove="Images\rotateRightCursor.PNG" />
+    <None Remove="Images\rotateTopCursor.PNG" />
+    <None Remove="Images\rotateTopLeftCursor.PNG" />
+    <None Remove="Images\rotateTopRightCursor.PNG" />
+    <None Remove="Images\rotate_point.png" />
+    <None Remove="Images\roundrectangleshape24.PNG" />
+    <None Remove="Images\roundrectangleshape32.PNG" />
+    <None Remove="Images\rulers24.PNG" />
+    <None Remove="Images\rulers32.PNG" />
+    <None Remove="Images\safari.PNG" />
+    <None Remove="Images\scale24.PNG" />
+    <None Remove="Images\scale32.PNG" />
+    <None Remove="Images\scissors-close.PNG" />
+    <None Remove="Images\scissors-small.PNG" />
+    <None Remove="Images\scissors24.PNG" />
+    <None Remove="Images\scissors32.PNG" />
+    <None Remove="Images\shape24.PNG" />
+    <None Remove="Images\shape32.PNG" />
+    <None Remove="Images\share24-off.PNG" />
+    <None Remove="Images\share24.PNG" />
+    <None Remove="Images\share32-off.PNG" />
+    <None Remove="Images\share32.PNG" />
+    <None Remove="Images\share_switch_knob.PNG" />
+    <None Remove="Images\share_switch_knob_pressed.PNG" />
+    <None Remove="Images\share_switch_off.PNG" />
+    <None Remove="Images\share_switch_on.PNG" />
+    <None Remove="Images\sliceoutline24.PNG" />
+    <None Remove="Images\sliceoutline32.PNG" />
+    <None Remove="Images\slice_icon_black.PNG" />
+    <None Remove="Images\slice_icon_white.PNG" />
+    <None Remove="Images\slice_mask.PNG" />
+    <None Remove="Images\smartrotate24.PNG" />
+    <None Remove="Images\smartrotate32.PNG" />
+    <None Remove="Images\starshape24.PNG" />
+    <None Remove="Images\starshape32.PNG" />
+    <None Remove="Images\subtract24.PNG" />
+    <None Remove="Images\subtract32.PNG" />
+    <None Remove="Images\text_align_center.png" />
+    <None Remove="Images\text_align_justify.png" />
+    <None Remove="Images\text_align_left.png" />
+    <None Remove="Images\text_align_right.png" />
+    <None Remove="Images\toolbar-zoom-in24.PNG" />
+    <None Remove="Images\toolbar-zoom-in32.PNG" />
+    <None Remove="Images\toolbar-zoom-out24.PNG" />
+    <None Remove="Images\toolbar-zoom-out32.PNG" />
+    <None Remove="Images\toolsmenu24.PNG" />
+    <None Remove="Images\toolsmenu32.PNG" />
+    <None Remove="Images\transform24.PNG" />
+    <None Remove="Images\transform32.PNG" />
+    <None Remove="Images\triangleshape24.PNG" />
+    <None Remove="Images\triangleshape32.PNG" />
+    <None Remove="Images\ungroup24.PNG" />
+    <None Remove="Images\ungroup32.PNG" />
+    <None Remove="Images\union24.PNG" />
+    <None Remove="Images\union32.PNG" />
+    <None Remove="Images\vectorize-stroke24.PNG" />
+    <None Remove="Images\vectorize-stroke32.PNG" />
+    <None Remove="Images\vectorize-text24.PNG" />
+    <None Remove="Images\vectorize-text32.PNG" />
+    <None Remove="Images\vector_asymmetric.PNG" />
+    <None Remove="Images\vector_disconnected.PNG" />
+    <None Remove="Images\vector_mirrored.PNG" />
+    <None Remove="Images\vector_rounded.PNG" />
+    <None Remove="Images\vector_straight.PNG" />
+    <None Remove="Images\viewmenu24.PNG" />
+    <None Remove="Images\viewmenu32.PNG" />
+    <None Remove="Images\welcome_checked.PNG" />
+    <None Remove="Images\welcome_checked_hover.PNG" />
+    <None Remove="Images\welcome_close.PNG" />
+    <None Remove="Images\welcome_close_hover.PNG" />
+    <None Remove="Images\welcome_close_pressed.PNG" />
+    <None Remove="Images\welcome_facebook.PNG" />
+    <None Remove="Images\welcome_icon.PNG" />
+    <None Remove="Images\welcome_intro.PNG" />
+    <None Remove="Images\welcome_ios.PNG" />
+    <None Remove="Images\welcome_manual.PNG" />
+    <None Remove="Images\welcome_play.PNG" />
+    <None Remove="Images\welcome_play_pressed.PNG" />
+    <None Remove="Images\welcome_support.PNG" />
+    <None Remove="Images\welcome_twitter.PNG" />
+    <None Remove="Images\welcome_unchecked.PNG" />
+    <None Remove="Images\welcome_unchecked_hover.PNG" />
+    <None Remove="Images\welcome_website.PNG" />
+    <None Remove="Images\zoom-cursor-in.PNG" />
+    <None Remove="Images\zoom-cursor-out.PNG" />
+    <None Remove="Images\zoom.PNG" />
+    <None Remove="Images\zoom24.PNG" />
+    <None Remove="Images\zoom32.PNG" />
+    <None Remove="LogoImages\EyeCodingLogo.png" />
   </ItemGroup>
   <ItemGroup>
-    <ApplicationDefinition Include="App.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </ApplicationDefinition>
-    <Compile Include="Converters\BooleanToInvisibility.cs" />
-    <Compile Include="Converters\BooleanToVisibility.cs" />
-    <Compile Include="Converters\BoolInverter.cs" />
-    <Compile Include="Converters\ConverterBase.cs" />
-    <Compile Include="Converters\DateToStringConverter.cs" />
-    <Compile Include="Converters\StringFormat.cs" />
-    <Compile Include="TemplateSelectors\VariableTreeViewTemplateSelector.cs" />
-    <Compile Include="Views\Browser.xaml.cs">
-      <DependentUpon>Browser.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Colors.xaml.cs">
-      <DependentUpon>Colors.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\CustomCanvas.xaml.cs">
-      <DependentUpon>CustomCanvas.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Editor.xaml.cs">
-      <DependentUpon>Editor.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Gradients.xaml.cs">
-      <DependentUpon>Gradients.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Images.xaml.cs">
-      <DependentUpon>Images.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Inspector.xaml.cs">
-      <DependentUpon>Inspector.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Shadows.xaml.cs">
-      <DependentUpon>Shadows.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Views\Variables.xaml.cs">
-      <DependentUpon>Variables.xaml</DependentUpon>
-    </Compile>
-    <Page Include="MainWindow.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Compile Include="App.xaml.cs">
-      <DependentUpon>App.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="MainWindow.xaml.cs">
-      <DependentUpon>MainWindow.xaml</DependentUpon>
-      <SubType>Code</SubType>
-    </Compile>
-    <Page Include="Resources\Images.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Resources\Options.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Resources\Variables.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Browser.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Colors.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\CustomCanvas.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Editor.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Gradients.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Images.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Inspector.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Shadows.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="Views\Variables.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
+    <PackageReference Include="HelixToolkit.Wpf" Version="2.11.0" />
+    <PackageReference Include="Syncfusion.Edit.WPF" Version="18.1.0.53" />
+    <PackageReference Include="Syncfusion.SfChromelessWindow.WPF" Version="18.1.0.53" />
+    <PackageReference Include="Syncfusion.Themes.Metro.WPF" Version="18.1.0.53" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Properties\AssemblyInfo.cs">
-      <SubType>Code</SubType>
-    </Compile>
-    <Compile Include="Properties\Resources.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Resources.resx</DependentUpon>
-    </Compile>
-    <Compile Include="Properties\Settings.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DependentUpon>Settings.settings</DependentUpon>
-      <DesignTimeSharedInput>True</DesignTimeSharedInput>
-    </Compile>
-    <EmbeddedResource Include="Properties\Resources.resx">
-      <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
-    </EmbeddedResource>
-    <None Include="packages.config" />
-    <None Include="Properties\Settings.settings">
-      <Generator>SettingsSingleFileGenerator</Generator>
-      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
-    </None>
-    <AppDesigner Include="Properties\" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="LogoImages\EyeCodingLogo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <ProjectReference Include="..\PaintCodeNet.Images\PaintCodeNet.Images.csproj">
-      <Project>{8cdc87b3-08eb-4cb6-9f4e-caddfccb7dab}</Project>
-      <Name>PaintCodeNet.Images</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\PaintCodeNet.Models\PaintCodeNet.Models.csproj">
-      <Project>{c10e2191-5b7a-4035-a7c0-3d1c73a50466}</Project>
-      <Name>PaintCodeNet.Models</Name>
-    </ProjectReference>
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\save.ico" />
-    <Resource Include="Icons\save_all.ico" />
-    <Resource Include="Icons\save_as.ico" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Icons\delete.ico" />
+    <ProjectReference Include="..\PaintCodeNet.Images\PaintCodeNet.Images.csproj" />
+    <ProjectReference Include="..\PaintCodeNet.Models\PaintCodeNet.Models.csproj" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Icons\clipboard_copy.ico" />
     <Resource Include="Icons\clipboard_cut.ico" />
     <Resource Include="Icons\clipboard_paste.ico" />
     <Resource Include="Icons\close_window.ico" />
-    <Resource Include="Icons\redo.ico" />
-    <Resource Include="Icons\undo.ico" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Icons\delete.ico" />
     <Resource Include="Icons\help.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Icons\home.ico" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Icons\redo.ico" />
+    <Resource Include="Icons\save.ico" />
+    <Resource Include="Icons\save_all.ico" />
+    <Resource Include="Icons\save_as.ico" />
+    <Resource Include="Icons\undo.ico" />
     <Resource Include="Images\align_bottom.PNG" />
     <Resource Include="Images\align_bottom_alt.PNG" />
     <Resource Include="Images\align_horizontally.PNG" />
@@ -275,6 +433,7 @@
     <Resource Include="Images\artboard-shadow.PNG" />
     <Resource Include="Images\artboard24.PNG" />
     <Resource Include="Images\artboard32.PNG" />
+    <Resource Include="Images\back.png" />
     <Resource Include="Images\bitmap_crop.PNG" />
     <Resource Include="Images\bitmap_crop_hover.PNG" />
     <Resource Include="Images\bitmap_fill.PNG" />
@@ -289,6 +448,7 @@
     <Resource Include="Images\colormenu32.PNG" />
     <Resource Include="Images\combine24.PNG" />
     <Resource Include="Images\combine32.PNG" />
+    <Resource Include="Images\contract.png" />
     <Resource Include="Images\create-grid24.PNG" />
     <Resource Include="Images\create-grid32.PNG" />
     <Resource Include="Images\create-symbol24.PNG" />
@@ -315,6 +475,7 @@
     <Resource Include="Images\editbitmap24.PNG" />
     <Resource Include="Images\editbitmap32.PNG" />
     <Resource Include="Images\empty.PNG" />
+    <Resource Include="Images\expand.png" />
     <Resource Include="Images\export24.PNG" />
     <Resource Include="Images\export32.PNG" />
     <Resource Include="Images\export_remove.PNG" />
@@ -330,10 +491,14 @@
     <Resource Include="Images\filter_slice_select.PNG" />
     <Resource Include="Images\flatten24.PNG" />
     <Resource Include="Images\flatten32.PNG" />
+    <Resource Include="Images\flip_horizontally.png" />
+    <Resource Include="Images\flip_vertically.png" />
     <Resource Include="Images\folder_blue.PNG" />
     <Resource Include="Images\folder_purple.PNG" />
     <Resource Include="Images\fontmenu24.PNG" />
     <Resource Include="Images\fontmenu32.PNG" />
+    <Resource Include="Images\frame.png" />
+    <Resource Include="Images\front.PNG" />
     <Resource Include="Images\grid-boxed.PNG" />
     <Resource Include="Images\grid-layout24.PNG" />
     <Resource Include="Images\grid-layout32.PNG" />
@@ -393,7 +558,7 @@
     <Resource Include="Images\inspector_picker_bg.PNG" />
     <Resource Include="Images\inspector_picker_bg_pressed.PNG" />
     <Resource Include="Images\inspector_reset.PNG" />
-    <Resource Include="Images\inspector_reset_hover%402x.png" />
+    <Resource Include="Images\inspector_reset_hover@2x.png" />
     <Resource Include="Images\inspector_reset_pressed.PNG" />
     <Resource Include="Images\inspector_rotate.PNG" />
     <Resource Include="Images\inspector_rotate_anti.PNG" />
@@ -506,13 +671,11 @@
     <Resource Include="Images\prefs_canvas.PNG" />
     <Resource Include="Images\prefs_general.PNG" />
     <Resource Include="Images\prefs_layers.PNG" />
-    <Resource Include="Images\prefs_placeholder%402x.png" />
+    <Resource Include="Images\prefs_placeholder@2x.png" />
     <Resource Include="Images\prefs_plugin.PNG" />
     <Resource Include="Images\preset_background.PNG" />
     <Resource Include="Images\rectangleshape24.PNG" />
-    <Resource Include="Images\rectangleshape32.PNG">
-      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
-    </Resource>
+    <Resource Include="Images\rectangleshape32.PNG" />
     <Resource Include="Images\resizeBottomLeftToTopRightCursor.PNG" />
     <Resource Include="Images\resizeHorCursor.PNG" />
     <Resource Include="Images\resizeTopLeftToBottomRightCursor.PNG" />
@@ -611,35 +774,6 @@
     <Resource Include="Images\zoom.PNG" />
     <Resource Include="Images\zoom24.PNG" />
     <Resource Include="Images\zoom32.PNG" />
+    <Resource Include="LogoImages\EyeCodingLogo.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\frame.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\back.png" />
-    <Resource Include="Images\front.PNG" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\contract.png" />
-    <Resource Include="Images\expand.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Images\flip_horizontally.png" />
-    <Resource Include="Images\flip_vertically.png" />
-  </ItemGroup>
-  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
-  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
-  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
-    <PropertyGroup>
-      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
-    </PropertyGroup>
-    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
-  </Target>
-  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
-       Other similar extension points exist, see Microsoft.Common.targets.
-  <Target Name="BeforeBuild">
-  </Target>
-  <Target Name="AfterBuild">
-  </Target>
-  -->
 </Project>
